@@ -66,7 +66,7 @@ bindings = <
     &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &dot_pipe &kp U &kp Q
     &rpi RALT R &rpi LGUI S &rpi LCTRL T &rpi LSHIFT H &kp D     &kp M &rpi RSHIFT N &rpi RCTRL A &rpi RGUI I &rpi LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
-             &lt 3 ESC &kp RETURN &kp E &kp SPACE &bspc_del &lt 1 TAB
+             &trans &lt 1 RETURN &kp E &kp SPACE &bspc_del &lt 3 TAB
 >;
                 };
                 nav_layer {
@@ -106,10 +106,10 @@ bindings = <
 // |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
 //             |     |     |     |   |  0  |  .  |     |
                         bindings = <
-   &trans &trans &trans &trans &trans    &kp A  &kp N7  &kp N8 &kp N9 &kp D
-   &trans &trans &trans &trans &trans    &kp B  &kp N4  &kp N5 &kp N6 &kp E
-   &trans &trans &trans &trans &trans    &kp C  &kp N1  &kp N2 &kp N3 &kp F
-                 &trans &trans &trans    &kp N0 &kp DOT &trans
+   &trans &kp N7 &kp N8 &kp N9 &kp X     &trans &trans &trans &trans &trans
+   &trans &kp N4 &kp N5 &kp N6 &trans    &trans &RSHIFT &lp RCTRL &kp RGUI &kp RALT 
+   &trans &kp N1 &kp N2 &kp N3 &trans    &trans &trans &trans &trans &trans
+                 &kp UNDER &kp DOT &kp N0    &trans &trans &trans
                         >;
                 };
         };

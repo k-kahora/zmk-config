@@ -14,6 +14,35 @@
 };
 
 / {
+
+    behaviors {
+        gresc: minus_flat {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        gresc: comma_ampster {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp AMPERSAND>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        gresc: period_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        gresc: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+	    keep-mods = <(MOD_RSFT)>
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -27,7 +56,7 @@ bindings = <
     &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &kp PIPE &kp U &kp Q
     &mt RALT R &LGUI S &mt LCTRL T &mt LSHIFT H &kp D     &kp M &mt RSHIFT N &mt RCTRL A &mt RGUI I &mt LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &kp MINUS &kp SEMI &kp COMMA
-             &kp LGUI &mt LCTRL ESC &kp E &kp SPACE &mo 2 &kp RALT
+             &lt 3 ESC &kp RETURN &kp E &kp SPACE &kp DELETE &lt 1 TAB
 >;
                 };
                 nav_layer {

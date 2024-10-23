@@ -10,6 +10,7 @@
 
 &mt {
     tapping-term-ms = <400>;
+    retro-tap;
 };
 
 / {
@@ -23,8 +24,8 @@
 // |  Z  |  X  |  C  |  V  |  B   |   |  X  |  W   |  -  |  ;  |  ,  |
 //             | GUI | NAV |  E   |   | SPC | SYM  | ALT |
 bindings = <
-    &kp Q &kp W &kp E &kp R &kp T     &kp Z &kp L &kp PIPE &kp U &kp Q
-    &kp R &kp S &kp T &kp H &kp D     &kp M &kp N &kp A    &kp I &kp O
+    &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &kp PIPE &kp U &kp Q
+    &mt R &kp S &kp T &kp H &kp D     &kp M &kp N &kp A    &kp I &kp O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &kp MINUS &kp SEMI &kp COMMA
              &kp LGUI &mt LCTRL ESC &kp E &kp SPACE &mo 2 &kp RALT
 >;

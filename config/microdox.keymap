@@ -103,7 +103,7 @@ bindings = <
 // |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
 //             | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans &trans &trans &kp APOS  &trans   &kp EQUAL &kp TILDE  &kp AMPS &kp HASH &kp PRCNT
+   &trans &trans &trans &kp APOS  &trans   &kp EQUAL &kp TILDE  &kp AT &kp HASH &kp PRCNT
    &trans    &kp LT    &kp GT    &kp DQT    &trans      &kp PLUS &kp CARET &kp LPAR  &kp RPAR &kp DLLR
    &trans    &kp LBKT  &kp RBKT    &kp GRAVE    &trans      &kp STAR &kp BACKSLASH &kp LBRC &kp RBRC &kp EXCL
                        &trans  &trans    &trans   &trans  &trans    &trans

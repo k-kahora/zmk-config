@@ -66,7 +66,7 @@ bindings = <
     &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &dot_pipe &kp U &kp Q
     &rpi RALT R &rpi LGUI S &rpi LCTRL T &rpi LSHIFT H &kp D     &kp M &rpi RSHIFT N &rpi RCTRL A &rpi RGUI I &rpi LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
-             &trans &lt 1 RETURN &kp E &kp SPACE &bspc_del &lt 3 TAB
+             &trans &lt 2 RETURN &kp E &kp SPACE &bspc_del &lt 3 ESC
 >;
                 };
                 nav_layer {
@@ -84,15 +84,20 @@ bindings = <
                 };
 
                 sym_layer {
+		
+//'   =~&#%    '
+//"   +^()$    "
+//`    *\{}!   `
+// 
 // -----------------------------------------------------------------------------------------
 // |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |
 // |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |
 // |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
 //             | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR
-   &trans    &trans    &trans    &trans    &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp PIPE
-   &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans   &kp BSLH
+   &trans &trans &trans &kp APOS  &trans   &kp EQUAL &kp TILDE  &kp AMPS &kp HASH &kp PRCNT
+   &trans    &kp LT    &kp GT    &kp DQT    &trans      &kp PLUS &kp CARET &kp LPAR  &kp RPAR &kp DLLR
+   &trans    &kp LBKT  &kp RBKT    &kp GRAVE    &trans      &kp STAR &kp BACKSLASH &kp LBRC &kp RBRC &kp EXCL
                        &kp LGUI  &trans    &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };

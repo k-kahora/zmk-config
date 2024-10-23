@@ -25,7 +25,7 @@
 //             | GUI | NAV |  E   |   | SPC | SYM  | ALT |
 bindings = <
     &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &kp PIPE &kp U &kp Q
-    &mt R &kp S &kp T &kp H &kp D     &kp M &kp N &kp A    &kp I &kp O
+    &mt RALT R &LGUI S &mt LCTRL T &mt LSHIFT H &kp D     &kp M &mt RSHIFT N &mt RCTRL A &mt RGUI I &mt LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &kp MINUS &kp SEMI &kp COMMA
              &kp LGUI &mt LCTRL ESC &kp E &kp SPACE &mo 2 &kp RALT
 >;

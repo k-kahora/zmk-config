@@ -73,7 +73,7 @@ lt_bspc: layer_tap_bspc_del {
 bindings = <
     &kp J &kp C &kp Y &kp K &kp F     &kp Z &kp L &dot_pipe &kp U &kp Q
     &rpi RALT R &rpi LGUI S &rpi LCTRL T &rpi LSHIFT H &kp D     &kp M &rpi RSHIFT N &rpi RCTRL A &rpi RGUI I &rpi LALT O
-    &lt FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
+    &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
              &kp ESC &lt 1 RETURN &lt 2 E &lt 3 SPACE &bspc_del &kp TAB
 >;
                 };

@@ -14,6 +14,14 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_reset {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
 
     behaviors {
 
@@ -75,7 +83,7 @@ bindings = <
     &rpi RALT R &rpi LGUI S &rpi LCTRL T &rpi LSHIFT H &kp D     &kp M &rpi RSHIFT N &rpi RCTRL A &rpi RGUI I &rpi LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
     
-             &kp ESC &lt 1 RETURN &lt 2 E &lt 3 SPACE &bspc_del &kp TAB
+             &lt 1 RETURN &lt 2 ESC  &kp E &kp SPACE &lt 3 &bspc_del &kp LC(SPACE)
 >;
                 };
                 nav_layer {
@@ -87,7 +95,7 @@ bindings = <
                         bindings = <
    &bt BT_CLR   &trans      &kp ESC  &kp TILDE &trans     &kp TAB  &kp HOME &kp UP   &kp END   &kp DEL
    &bt BT_SEL 0 &kp K_CMENU &kp RALT &kp LCTRL &mo 3      &kp FSLH &kp LEFT &kp DOWN &kp RIGHT &kp BSPC
-   &bt BT_SEL 1 &trans      &trans   &trans    &trans     &kp BSLH &kp RET  &trans   &trans    &trans
+   &bt BT_SEL 1 &trans      &trans   &trans    &trans     &kp BSLH &kp RET  &trans   &bootloader    &soft_off
                             &trans   &trans    &trans     &trans   &trans   &trans
                         >;
                 };
@@ -123,7 +131,7 @@ bindings = <
    &trans &kp N7 &kp N8 &kp N9 &kp X     &trans &trans &trans &trans &trans
    &trans &kp N4 &kp N5 &kp N6 &trans    &trans &kp RSHIFT &kp RCTRL &kp RGUI &kp RALT 
    &trans &kp N1 &kp N2 &kp N3 &trans    &trans &trans &trans &trans &trans
-                 &kp UNDER &kp DOT &kp N0    &trans &trans &trans
+                 &trans &kp UNDER &kp N0    &trans &trans &trans
                         >;
                 };
         };

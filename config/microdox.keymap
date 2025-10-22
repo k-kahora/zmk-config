@@ -83,7 +83,7 @@ bindings = <
     &rpi RALT R &rpi LGUI S &rpi LCTRL T &rpi LSHIFT H &kp D     &kp M &rpi RSHIFT N &rpi RCTRL A &rpi RGUI I &rpi LALT O
     &kp FSLH &kp V &kp G &kp P &kp B  &kp X &kp W &min_under &kp SEMI &comm_amp
     
-             &lt 1 RETURN &lt 2 ESC  &kp E &kp SPACE &lt 3 BACKSPACE &kp TAB
+             &lt 1 RETURN &lt 2 ESC  &kp E &kp SPACE &lt 3 BACKSPACE &kp LC(SPACE)
 >;
                 };
                 nav_layer {

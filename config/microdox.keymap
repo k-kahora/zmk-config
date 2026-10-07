@@ -20,6 +20,8 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
+            // Limit to the typing layers so Q+W in Blender doesn't fire Esc
+            layers = <0 1 2 3>;
         };
     };
 
@@ -67,6 +69,25 @@ lt_bspc: layer_tap_bspc_del {
     bindings = <&mo>, <&bspc_del>;
     tapping-term-ms = <200>;
 };
+
+// Blender mod-tap: no retro-tap, so holding Alt/Ctrl/Shift while
+// dragging the pen and then releasing never types the tap key.
+bmt: blender_mod_tap {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    bindings = <&kp>, <&kp>;
+};
+
+// Blender layer-tap: hold for the Blender function layer, tap for Tab.
+blt: blender_layer_tap {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    bindings = <&mo>, <&kp>;
+};
     };
 
         keymap {
@@ -88,12 +109,13 @@ bindings = <
                 };
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |BTCLR|     | ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
+// |BTCLR|BLNDR| ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
 // | BT1 | GUI | ALT | CTRL | NUM |   |  /  | LEFT | DOWN | RGT | BSPC |
 // | BT2 |     |     |      |     |   |  \  | ENT  |      |     |      |
 //             |     |      |     |   |     |      |      |
+// BLNDR = toggle Blender mode on
                         bindings = <
-   &bt BT_CLR   &trans      &kp ESC  &kp TILDE &trans     &kp TAB  &kp HOME &kp UP   &kp END   &kp DEL
+   &bt BT_CLR   &tog 4      &kp ESC  &kp TILDE &trans     &kp TAB  &kp HOME &kp UP   &kp END   &kp DEL
    &bt BT_NXT &kp K_CMENU &kp RALT &kp LCTRL &mo 3      &kp FSLH &kp LEFT &kp DOWN &kp RIGHT &kp BSPC
    &bt BT_PRV &bt BT_SEL 0      &bt BT_SEL 1   &trans    &trans     &kp BSLH &kp RET  &trans   &bootloader    &soft_off
                             &trans   &trans    &trans     &trans   &trans   &trans
@@ -134,7 +156,35 @@ bindings = <
                  &trans &kp UNDER &kp N0    &trans &trans &trans
                         >;
                 };
+
+                blender_layer {
+// Layer 4 - Blender base (left hand only; right half falls through to default)
+// -----------------------------------------------------------------------------------------
+// |  Q  |  W  |  E  |  R  |  T   |   |     |      |      |     |      |
+// |A/ALT|  S  |  D  |  F  |  G   |   |     |      |      |     |      |
+// |  Z  |  X  |  C  |  V  |  B   |   |     |      |      |     |      |
+//       |ESC/CTRL|SPC/SHFT|TAB/BFN|  |     |      | EXIT |
+                        bindings = <
+   &kp Q &kp W &kp E &kp R &kp T     &trans &trans &trans &trans &trans
+   &bmt LALT A &kp S &kp D &kp F &kp G     &trans &trans &trans &trans &trans
+   &kp Z &kp X &kp C &kp V &kp B     &trans &trans &trans &trans &trans
+             &bmt LCTRL ESC &bmt LSHFT SPACE &blt 5 TAB     &trans &trans &tog 4
+                        >;
+                };
+
+                blender_fn_layer {
+// Layer 5 - Blender function (hold inner left thumb)
+// -----------------------------------------------------------------------------------------
+// |  1  |  2  |  3  | F3  |  H   |   |     |      |      |     |      |
+// | ALT |  J  |  L  |  I  |  K   |   |     |      |      |     |      |
+// |  `  |  P  |  .  |  M  |  N   |   |     |      |      |     |      |
+//       |  CTRL  |  SHIFT |  (held)  |     |      |      |
+                        bindings = <
+   &kp N1 &kp N2 &kp N3 &kp F3 &kp H     &trans &trans &trans &trans &trans
+   &kp LALT &kp J &kp L &kp I &kp K      &trans &trans &trans &trans &trans
+   &kp GRAVE &kp P &kp DOT &kp M &kp N   &trans &trans &trans &trans &trans
+             &bmt LCTRL ESC &bmt LSHFT SPACE &trans     &trans &trans &trans
+                        >;
+                };
         };
 };
-
-
